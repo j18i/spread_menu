@@ -66,7 +66,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 <i class="fa-solid fa-ellipsis-vertical" style="font-size: 18px;" ></i>
 </div>
 
-<div id="widgetmenu" class="widgetmenu <?=$menu_type?>" style="<?if($radius != '0')echo '--radius:'.$radius.'px';?> --animation-length:<?=$animation_length/1000?>s; <?if($menu_width != 0) echo 'width:'.$menu_width.'px;';?>">
+<div id="widgetmenu" class="widgetmenu <?=$menu_type?>" style="<?if($radius != '0')echo '--radius:'.$radius.'px;';?> --animation-length:<?=$animation_length/1000?>s; <?if($menu_width != 0) echo 'width:'.$menu_width.'px;';?>">
 	<ul>
 			<li class="activebtn" onclick="activemenu()">
         <i class="material-icons">open_with</i>

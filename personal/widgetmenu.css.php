@@ -991,227 +991,6 @@ display: flex;
   color: var(--menu-point);
 }
 
-<?//iconic 아이콘 스킨 수평 버전(h)?>
-
-.iconic_h {
-  width: fit-content !important;
-  height: 40px;
-  background: var(--menu-base);
-  border-radius: var(--radius);
-  padding: 3px 5px;
-  transition-duration: var(--animation-length);
-  flex-direction: row;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  margin-top: 0;
-  margin-left: 50vw;
-  <?if($css['menu_style'][1] == 'right') echo 'bottom'; else echo 'top'?>: var(--position);
-  transform: translateX(-50%);
-}
-.iconic_h.active {
-  height: 60px;
-}
-.iconic_h.active .widgetmenu_item{
-}
-.iconic_h.widgetmenu ul {
-  flex-direction: row;
-  overflow: hidden;
-  height: 40px;
-  transition-duration: var(--animation-length);
-}
-.iconic_h.active.widgetmenu ul {
-  height: 60px;
-}
-.iconic_h .widgetmenu_list {
-  margin: 0px 5px;
-  width: 40px;
-}
-.iconic_h .widget_a {
-  <?if($css['menu_style'][1] == 'right' ) echo 'flex-direction: column-reverse;'; else echo 'flex-direction: column;';?>
-}
-.iconic_h .widgetmenu_item {
-}
-
-.iconic_h .widgetmenu_item_icon {
-  <?if($css['menu_style'][1] == 'left' || $css['menu_style'][1] == 'center') echo 'left'; else echo 'right';?>: 0px;
-  margin: 8px 0px;
-}
-.iconic_h .widgetmenu_item:hover {
-  filter: drop-shadow(0px 0px 3px var(--menu-point));
-}
-.iconic_h .widgetmenu_item:hover * {
-  color: var(--menu-point);
-}
-
-.iconic_h .widgetmenu_item_text {
-  white-space: nowrap;
-  width: fit-content;
-  padding: 2px 0px;
-  white-space: normal;
-  word-break: break-all;
-}
-
-.iconic_h .widgetmenu_main {}
-.iconic_h .widgetmenu_main_havesub {}
-.iconic_h .widgetmenu_main_havesub::after {
-  content: '';
-  right: -5px;
-  <?if($css['menu_style'][1] == 'right') echo 'bottom: 30px;'; else echo 'top: 3px;';?>
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  border-<?if($css['menu_style'][1] == 'right') echo 'bottom'; else echo 'top';?>: 6px solid var(--menu-point);
-  border-<?if($css['menu_style'][1] == 'right') echo 'top'; else echo 'bottom';?>: 5px solid transparent;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-}
-
-.iconic_h .widgetmenu_sub {
-  display:none;
-}
-.iconic_h .widgetmenu_sub.active {
-  display: block;
-}
-
-.iconic_h .widgetmenu_sidewindow {
-  width: fit-content;
-  height: 40px;
-  background: var(--menu-base);
-  border-radius: var(--radius);
-  padding: 3px 5px;
-  transition-duration: var(--animation-length);
-  flex-direction: row;
-  display: none;
-  justify-content: space-evenly;
-  margin-top: 0;
-  margin-left: 50%;
-  <?if($css['menu_style'][1] == 'right') echo 'bottom'; else echo 'top';?>: calc(100% + 7px);
-  translate: -50% 0;
-  position: absolute;
-  left: 0;
-  overflow: hidden;
-  <?if($css['menu_style'][1] == 'right') echo 'align-items: flex-end;'; else echo 'align-items: flex-start;'?>
-}
-
-.iconic_h.active .widgetmenu_sidewindow {
-  height: 60px;
-}
-
-.iconic_h .widgetmenu_sidewindow.active {
-  display: flex;
-}
-.iconic_h .widgetmenu_sidewindow.on {
-  animation: <?if($css['menu_style'][1] == 'right') echo 'fadeInUp'; else echo 'fadeInDown';?> var(--animation-length);
-}
-.iconic_h .widgetmenu_sidewindow.off {
-  animation: <?if($css['menu_style'][1] == 'right') echo 'fadeOutDown'; else echo 'fadeOutUp';?> var(--animation-length);
-  padding: 0;
-  width:0 !important;
-}
-
-.iconic_h .widgetmenu_side {
-  display: flex;
-  justify-content: center;
-  <?if($css['menu_style'][1] == 'right') echo 'align-items: flex-end;'; else echo 'align-items: flex-start;'?>
-  overflow: hidden;
-  border-radius: 0px;
-  flex-direction: row;
-  margin-top: 0px;
-}
-.iconic_h .widgetmenu_side ul {
-  flex-direction: row;
-  <?if($css['menu_style'][1] == 'right' ) echo 'align-items: flex-end;'; else echo 'align-items: flex-start;';?>
-}
-.iconic_h .widgetmenu_side_text {
-  display: none;
-}
-
-.iconic_h .widgetmenu_side_menu_box {
-  align-items: flex-start;
-  justify-content: flex-start;
-  top: -5px;
-  position: relative;
-  <?if($css['menu_style'][1] == 'right' ) echo 'align-items: flex-end;'; else echo 'align-items: flex-start;';?>
-}
-.iconic_h .widgetmenu_side_menu_box::before {
-  content: '';
-  width: 0px;
-  height: 100px;
-  border-left: 1px dashed var(--menu-point);
-}
-.iconic_h .widgetmenu_side_item {
-  width: 100%;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  margin: 0px 5px;
-  top: 4px;
-  position: relative;
-  width: 40px;
-  <?if($css['menu_style'][1] == 'right' ) echo 'flex-direction: column-reverse;'; else echo 'flex-direction: column;';?>
-}
-.iconic_h .widgetmenu_side_item:hover {
-  filter: drop-shadow(0px 0px 3px var(--menu-point));
-}
-.iconic_h .widgetmenu_side_item:hover * {
-  color: var(--menu-point);
-}
-.iconic_h .widgetmenu_side_item a {
-display: flex;
-  align-items: center;
-  justify-content: center;
-  <?if($css['menu_style'][1] == 'right' ) echo 'flex-direction: column-reverse;'; else echo 'flex-direction: column;';?>
-}
-.iconic_h .widgetmenu_side_item_icon {
-  margin: 8px 0px;
-  display: inline-block;
-}
-.iconic_h .widgetmenu_side_item_text {
-  display: inline-block;
-  white-space: nowrap;
-  padding: 2px 0px;
-}
-
-
-.iconic_h .widgetmenu_bgm_box {
-  padding-right: 8px;
-  margin-bottom: 0px;
-  position: relative;
-  height: 40px;
-  transition-duration: var(--animation-length);
-}
-
-.iconic_h .widgetmenu_bgm_box::before {
-  content: '';
-  width: 8px;
-  height: 100px;
-  border-left: 1px dashed var(--menu-point);
-}
-.iconic_h .widgetmenu_bgm_box a:hover {
-  filter: drop-shadow(0px 0px 3px var(--menu-point));
-}
-.iconic_h .widgetmenu_bgm_box a:hover * {
-  color: var(--menu-point);
-}
-.iconic_h.active .widgetmenu_bgm_box {
-}
-.iconic_h .widgetmenu_bgm_text {}
-.iconic_h .widgetmenu_bgm_control {}
-.iconic_h #playbtn {}
-.iconic_h 
-.iconic_h #stopbtn {}
-
-.iconic_h .activebtn {
-  display: flex;
-}
-.iconic_h .activebtn:hover {
-  filter: drop-shadow(0px 0px 3px var(--menu-point));
-}
-.iconic_h .activebtn:hover * {
-  color: var(--menu-point);
-}
-
-
 <?// iconic_circle 아이콘(동글동글) 스킨?>
 
 .iconic_circle {
@@ -1775,6 +1554,232 @@ display: flex;
   border: 1px solid var(--menu-base);
   left: -10px;
 }
+
+<?//iconic 아이콘 스킨 수평 버전(h)?>
+
+.iconic_h {
+  width: fit-content !important;
+  height: 40px;
+  background: var(--menu-base);
+  border-radius: var(--radius);
+  transition-duration: var(--animation-length);
+  flex-direction: row;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-top: 0;
+  margin-left: 50vw;
+  <?if($css['menu_style'][1] == 'right') echo 'bottom'; else echo 'top'?>: var(--position);
+  transform: translateX(-50%);
+  padding: 10px 16px;
+}
+.iconic_h.active {
+  height: 60px;
+}
+.iconic_h.active .widgetmenu_item{
+}
+.iconic_h.widgetmenu ul {
+  flex-direction: row;
+  overflow: hidden;
+  height: 40px;
+  transition-duration: var(--animation-length);
+  margin-right: 10px;
+}
+.iconic_h.active.widgetmenu ul {
+  height: 60px;
+}
+.iconic_h .widgetmenu_list {
+  margin: 0px 5px;
+  width: fit-content;
+  max-width: 60px;
+  min-width: 40px;
+}
+.iconic_h .widget_a {
+  <?if($css['menu_style'][1] == 'right' ) echo 'flex-direction: column-reverse;'; else echo 'flex-direction: column;';?>
+}
+.iconic_h .widgetmenu_item {
+}
+
+.iconic_h .widgetmenu_item_icon {
+  <?if($css['menu_style'][1] == 'left' || $css['menu_style'][1] == 'center') echo 'left'; else echo 'right';?>: 0px;
+  margin: 8px 0px;
+}
+.iconic_h .widgetmenu_item:hover {
+  filter: drop-shadow(0px 0px 3px var(--menu-point));
+}
+.iconic_h .widgetmenu_item:hover * {
+  color: var(--menu-point);
+}
+
+.iconic_h .widgetmenu_item_text {
+  white-space: nowrap;
+  width: fit-content;
+  padding: 2px 0px;
+  word-break: break-all;
+}
+
+.iconic_h .widgetmenu_main {}
+.iconic_h .widgetmenu_main_havesub {}
+.iconic_h .widgetmenu_main_havesub::after {
+  content: '';
+  right: 0px;
+  <?if($css['menu_style'][1] == 'right') echo 'bottom: 30px;'; else echo 'top: 3px;';?>
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-<?if($css['menu_style'][1] == 'right') echo 'bottom'; else echo 'top';?>: 6px solid var(--menu-point);
+  border-<?if($css['menu_style'][1] == 'right') echo 'top'; else echo 'bottom';?>: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.iconic_h .widgetmenu_sub {
+  display:none;
+}
+.iconic_h .widgetmenu_sub.active {
+  display: block;
+}
+
+.iconic_h .widgetmenu_sidewindow {
+  width: fit-content;
+  height: 40px;
+  background: var(--menu-base);
+  border-radius: var(--radius);
+  padding: 3px 5px;
+  transition-duration: var(--animation-length);
+  flex-direction: row;
+  display: none;
+  justify-content: space-evenly;
+  margin-top: 0;
+  margin-left: 50%;
+  <?if($css['menu_style'][1] == 'right') echo 'bottom'; else echo 'top';?>: calc(100% + 7px);
+  translate: -50% 0;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  <?if($css['menu_style'][1] == 'right') echo 'align-items: flex-end;'; else echo 'align-items: flex-start;'?>
+}
+
+.iconic_h.active .widgetmenu_sidewindow {
+  height: 60px;
+}
+
+.iconic_h .widgetmenu_sidewindow.active {
+  display: flex;
+}
+.iconic_h .widgetmenu_sidewindow.on {
+  animation: <?if($css['menu_style'][1] == 'right') echo 'fadeInUp'; else echo 'fadeInDown';?> var(--animation-length);
+}
+.iconic_h .widgetmenu_sidewindow.off {
+  animation: <?if($css['menu_style'][1] == 'right') echo 'fadeOutDown'; else echo 'fadeOutUp';?> var(--animation-length);
+  padding: 0;
+  width:0 !important;
+}
+
+.iconic_h .widgetmenu_side {
+  display: flex;
+  justify-content: center;
+  <?if($css['menu_style'][1] == 'right') echo 'align-items: flex-end;'; else echo 'align-items: flex-start;'?>
+  overflow: hidden;
+  border-radius: 0px;
+  flex-direction: row;
+  margin-top: 0px;
+}
+.iconic_h .widgetmenu_side ul {
+  flex-direction: row;
+  <?if($css['menu_style'][1] == 'right' ) echo 'align-items: flex-end;'; else echo 'align-items: flex-start;';?>
+}
+.iconic_h .widgetmenu_side_text {
+  display: none;
+}
+
+.iconic_h .widgetmenu_side_menu_box {
+  align-items: flex-start;
+  justify-content: flex-start;
+  top: -5px;
+  position: relative;
+  <?if($css['menu_style'][1] == 'right' ) echo 'align-items: flex-end;'; else echo 'align-items: flex-start;';?>
+}
+.iconic_h .widgetmenu_side_menu_box::before {
+  content: '';
+  width: 0px;
+  height: 100px;
+  border-left: 1px dashed var(--menu-point);
+  top: -20px;
+  position: absolute;
+}
+.iconic_h .widgetmenu_side_item {
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin: 0px 5px;
+  top: 4px;
+  position: relative;
+  width: 40px;
+  <?if($css['menu_style'][1] == 'right' ) echo 'flex-direction: column-reverse;'; else echo 'flex-direction: column;';?>
+}
+.iconic_h .widgetmenu_side_item:hover {
+  filter: drop-shadow(0px 0px 3px var(--menu-point));
+}
+.iconic_h .widgetmenu_side_item:hover * {
+  color: var(--menu-point);
+}
+.iconic_h .widgetmenu_side_item a {
+display: flex;
+  align-items: center;
+  justify-content: center;
+  <?if($css['menu_style'][1] == 'right' ) echo 'flex-direction: column-reverse;'; else echo 'flex-direction: column;';?>
+}
+.iconic_h .widgetmenu_side_item_icon {
+  margin: 8px 0px;
+  display: inline-block;
+}
+.iconic_h .widgetmenu_side_item_text {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 2px 0px;
+}
+
+
+.iconic_h .widgetmenu_bgm_box {
+  padding-right: 8px;
+  margin-bottom: 0px;
+  position: relative;
+  height: 40px;
+  transition-duration: var(--animation-length);
+}
+
+.iconic_h .widgetmenu_bgm_box::before {
+  content: '';
+  width: 8px;
+  height: 100px;
+  border-left: 1px dashed var(--menu-point);
+}
+.iconic_h .widgetmenu_bgm_box a:hover {
+  filter: drop-shadow(0px 0px 3px var(--menu-point));
+}
+.iconic_h .widgetmenu_bgm_box a:hover * {
+  color: var(--menu-point);
+}
+.iconic_h.active .widgetmenu_bgm_box {
+}
+.iconic_h .widgetmenu_bgm_text {}
+.iconic_h .widgetmenu_bgm_control {}
+.iconic_h #playbtn {}
+.iconic_h 
+.iconic_h #stopbtn {}
+
+.iconic_h .activebtn {
+  display: flex;
+}
+.iconic_h .activebtn:hover {
+  filter: drop-shadow(0px 0px 3px var(--menu-point));
+}
+.iconic_h .activebtn:hover * {
+  color: var(--menu-point);
+}
+
+
 
 <?// 스킨 템플릿 sample 부분을 스킨명으로 변경해서 사용?>
 

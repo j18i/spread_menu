@@ -286,7 +286,9 @@ for($i=0; $cs = sql_fetch_array($css_sql); $i++) {
   .mobilebtn {
     display:none;
   }
- 
+  .iconic_h {
+    left: 0;
+  }
  }
  
  <?// 모바일 버전?>
@@ -1596,7 +1598,6 @@ display: flex;
   height: 40px;
   background: var(--menu-base);
   border-radius: var(--radius);
-  padding: 3px 5px;
   transition-duration: var(--animation-length);
   flex-direction: row;
   display: flex;
@@ -1606,6 +1607,7 @@ display: flex;
   margin-left: 50vw;
   <?if($css['use_header'][0] == 'R') echo 'bottom'; else echo 'top'?>: var(--position);
   transform: translateX(-50%);
+  padding: 10px 16px;
 }
 .iconic_h.active {
   height: 60px;
@@ -1617,13 +1619,16 @@ display: flex;
   overflow: hidden;
   height: 40px;
   transition-duration: var(--animation-length);
+  margin-right: 10px;
 }
 .iconic_h.active.widgetmenu ul {
   height: 60px;
 }
 .iconic_h .widgetmenu_list {
   margin: 0px 5px;
-  width: 40px;
+  width: fit-content;
+  max-width: 60px;
+  min-width: 40px;
 }
 .iconic_h .widget_a {
   <?if($css['use_header'][0] == 'R' ) echo 'flex-direction: column-reverse;'; else echo 'flex-direction: column;';?>
@@ -1654,7 +1659,7 @@ display: flex;
 .iconic_h .widgetmenu_main_havesub {}
 .iconic_h .widgetmenu_main_havesub::after {
   content: '';
-  right: -5px;
+  right: 0px;
   <?if($css['use_header'][0] == 'R') echo 'bottom: 30px;'; else echo 'top: 3px;';?>
   position: absolute;
   width: 0px;
@@ -1726,7 +1731,6 @@ display: flex;
 }
 
 .iconic_h .widgetmenu_side_menu_box {
-  align-items: flex-start;
   justify-content: flex-start;
   top: -5px;
   position: relative;
@@ -1737,6 +1741,8 @@ display: flex;
   width: 0px;
   height: 100px;
   border-left: 1px dashed var(--menu-point);
+  top: -20px;
+  position: absolute;
 }
 .iconic_h .widgetmenu_side_item {
   width: 100%;
