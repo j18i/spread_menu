@@ -291,7 +291,38 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
       }}
 
 $(document).ready(function() {
-  
+  var widgetMenu = document.querySelector('.widgetmenu');
+  var horizonswitch = false;
+
+  if (widgetMenu.classList.contains('iconic_h') || horizonswitch == true){
+    if (window.innerWidth <= 1000){
+      widgetMenu.classList.remove('iconic_h');
+      widgetMenu.classList.add('iconic');
+        }
+
+    horizonswitch = true;
+    var resizeTimer;
+    
+    window.addEventListener('resize', () => {
+      if (resizeTimer != null ) {
+          clearTimeout(resizeTimer);
+        }
+        resizeTimer = setTimeout(() => {
+          onResize();
+        }, 1000);
+      });
+
+    function onResize() {
+      if (window.innerWidth <= 1000){
+        widgetMenu.classList.remove('iconic_h');
+        widgetMenu.classList.add('iconic');
+      } else {
+        widgetMenu.classList.remove('iconic');
+        widgetMenu.classList.add('iconic_h');
+        }
+      }
+  }
+
     const fold = <?=$fold_type?>;
     const mainmenus = document.querySelectorAll('.widgetmenu_main_havesub');
     mainmenus.forEach(function(x, i){
@@ -321,7 +352,7 @@ $(document).ready(function() {
         menuOnOff = 'off';
       }
 
-      if(widgetMenu.classList.contains('digital') || widgetMenu.classList.contains('iconic')){
+      if(widgetMenu.classList.contains('digital') || widgetMenu.classList.contains('iconic') || widgetMenu.classList.contains('iconic_h')){
         if(fold == true){
           // 디지털이라면 이전에 보였던 메뉴를 숨긴다
 
@@ -338,9 +369,9 @@ $(document).ready(function() {
 
         if(menuOnOff == 'on'){
         a.classList.add('off');
-        if(widgetMenu.classList.contains('digital') || widgetMenu.classList.contains('iconic')){
+        if(widgetMenu.classList.contains('digital') || widgetMenu.classList.contains('iconic') || widgetMenu.classList.contains('iconic_h')){
           if(fold == true){
-            a.classList.remove('active');
+          a.classList.remove('active');
           x.classList.remove('active');
           } else if(fold == false){
             setTimeout(() => {
@@ -367,13 +398,27 @@ $(document).ready(function() {
         }, <?=$animation_length?>);
         }
 
-      if(widgetMenu.classList.contains('digital') || widgetMenu.classList.contains('iconic')){
+        // 사이드 윈도우 조절
+      if(widgetMenu.classList.contains('digital') || widgetMenu.classList.contains('iconic') || widgetMenu.classList.contains('iconic_h')){
         if(fold == true){
         var onMenus = document.querySelectorAll('.widgetmenu_sub.active');
         if (onMenus.length == 0){
-          sideWin.classList.remove('active');
+          sideWin.classList.add('off');
+          
+          setTimeout(() => {
+            sideWin.classList.remove('off');
+            sideWin.classList.remove('active');
+          }, <?=$animation_length?>);
+
         } else {
           sideWin.classList.add('active');
+          sideWin.classList.add('on');
+          
+          setTimeout(() => {
+            sideWin.classList.remove('on');
+          }, <?=$animation_length?>);
+          
+          
         }}}
 
       });
@@ -382,7 +427,7 @@ $(document).ready(function() {
       });
 
     var widgetMenu = document.querySelector('.widgetmenu');
-    if(widgetMenu.classList.contains('digital') || widgetMenu.classList.contains('iconic')){
+    if(widgetMenu.classList.contains('digital') || widgetMenu.classList.contains('iconic') ||  widgetMenu.classList.contains('iconic_h')){
       if(fold == true){
         submenus.forEach(function(a){
       sidewindow(a);
@@ -439,7 +484,6 @@ $(document).ready(function() {
     }
     widgetMenu.classList.add('done_loading');
   });
-
 
 
   </script>
